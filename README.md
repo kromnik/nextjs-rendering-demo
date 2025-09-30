@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Posts with Real-time Updates
 
-## Getting Started
+## Описание проекта
 
-First, run the development server:
+Приложение демонстрирует различные методы рендеринга страниц в Next.js и позволяет видеть уведомления о действиях пользователя в реальном времени на WebSocket странице.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Технологический стек
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **JSONPlaceholder API**
+- **WebSocket**
+- **Versel**
+
+## Функциональность
+
+### Управление постами
+- **Создание новых постов** через модальное окно на CSR странице
+- **Глобальное состояние** - посты сохраняются между переходами страниц
+
+### Реальное время
+- **WebSocket уведомления** о создании новых постов
+- **Мгновенные обновления** на WebSocket странице
+- **Синхронизация состояния** между разными страницами
+
+### Демонстрация рендеринга
+- **SSG** - статическая генерация при сборке
+- **ISR** - автоматическое обновление каждые 10 секунд
+- **SSR** - рендеринг на сервере при каждом запросе
+- **CSR** - рендеринг на клиенте в браузере
+
+### Навигация
+- **Навигация** на всех страницах
+- **Быстрые переходы** благодаря Next.js App Router
+
+## Архитектура (FB)
+
+Проект структурирован согласно Feature-based методологии:
+
+```
+src/
+├── app/                        # App Router
+│   ├── csr/
+│   │   └── page.tsx            # CSR страница
+│   ├── isr/
+│   │   └── page.tsx            # ISR страница
+│   ├── ssg/
+│   │   └── page.tsx            # SSG страница
+│   ├── ssr/
+|   |   ├──[id]/
+|   |   |   └── page.tsx        # SSR(post.id) страница
+│   │   └── page.tsx            # SSR(list) страница
+│   ├── globals.css             # Глобальные стили
+│   ├── layout.tsx              # Главный layout с навигацией
+│   └── page.tsx                # Главная страница
+├── components/
+│   ├── ui/
+│   │   ├── Modal.tsx           # Модальное окно
+│   │   └── Navbar.tsx          # Навигация по страницам
+│   └── posts/
+│       ├── PostCard.tsx        # Карточка поста
+│       └── PostList.tsx        # Список постов (переиспользуемый)
+├── contexts/
+|   └── posts-context.tsx       # Контекст
+├── hookss/
+|   └── use-posts-websocket.ts  # Хук уведомлений WebSocket
+└── lib/
+    └── api.ts                  # Обертка для API-запросов
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Особенности реализации
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- App Router - современная маршрутизация Next.js
+- Переиспользуемые компоненты
+- UI-компоненты отдельно от бизнес-логики
+- Использование React Contex
+- Глобальное состояние постов доступно на всех страницах
+- Сохранение данных между переходами
+- Изоляция логики(кастомный хук usePostsWebSocket)
+- Демо-реализация WebSocket без бэкенда
+- Единый API - разный способ вызова
+- Готовность к масштабированию
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Установка и запуск
 
-To learn more about Next.js, take a look at the following resources:
+1. Клонируйте репозиторий:
+    ```
+    git clone https://github.com/kromnik/
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Перейдите в директорию проекта:
+    ```
+    cd 
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Установите зависимости:
+    ```
+    npm install
+    ```
 
-## Deploy on Vercel
+4. Запустите приложение:
+    ```
+    npm run dev:open
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Приложение будет доступно по адресу [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Ссылка на проект
+
+* [https://-ebon.vercel.app/]
+
+
+## Лицензия
+
+MIT
