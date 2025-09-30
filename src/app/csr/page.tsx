@@ -99,7 +99,7 @@ export default function CsrPage() {
           {/* Кнопка создания поста */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg cursor-pointer"
           >
             Create New Post
           </button>

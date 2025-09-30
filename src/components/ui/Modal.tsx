@@ -142,7 +142,7 @@ export const Modal = ({ isOpen, onClose, onPostCreated }: ModalProps) => {
                 id="file"
                 type="file"
                 ref={fileInputRef}
-                className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer"
               />
             </div>
 
@@ -150,7 +150,7 @@ export const Modal = ({ isOpen, onClose, onPostCreated }: ModalProps) => {
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors duration-200"
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors duration-200 cursor-pointer"
                 disabled={isLoading}
               >
                 Cancel
@@ -158,7 +158,7 @@ export const Modal = ({ isOpen, onClose, onPostCreated }: ModalProps) => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
                 {isLoading ? "Creating..." : "Create Post"}
               </button>
