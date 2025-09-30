@@ -88,12 +88,12 @@ src/
 
 1. Клонируйте репозиторий:
     ```
-    git clone https://github.com/kromnik/
+    git clone https://github.com/kromnik/nextjs-rendering-demo.git
     ```
 
 2. Перейдите в директорию проекта:
     ```
-    cd 
+    cd nextjs-rendering-demo
     ```
 
 3. Установите зависимости:
@@ -111,7 +111,7 @@ src/
 
 ## Ссылка на проект
 
-* [https://-ebon.vercel.app/]
+* [https://nextjs-rendering-demo-sandy.vercel.app]
 
 
 ## Лицензия
