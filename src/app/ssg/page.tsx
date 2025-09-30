@@ -9,7 +9,7 @@ export default async function SsgPage() {
 
   return (
     <div>
-      <p className="text-center w-[75%] mx-auto mb-8 bg-blue-50 border border-blue-200 text-blue-500">
+      <p className="text-center w-[75%] mx-auto mb-8 p-4 bg-blue-50 border border-blue-200 text-blue-500">
         💡 Эта страница была предварительно отрендерена во время сборки. <br />
            Данные извлекаются один раз во время сборки и используются повторно для каждого запроса.
       </p>

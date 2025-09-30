@@ -89,7 +89,7 @@ export default function CsrPage() {
         {/* <h3 className="text-xl font-semibold text-center text-blue-800 mb-4">
           Управление постами на стороне клиента
         </h3> */}
-        <p className="text-blue-700 text-center">
+        <p className="mb-4 text-blue-700 text-center">
           На этой странице демонстрируется рендеринг на стороне клиента CSR. Вся
           загрузка данных и управление состоянием происходит в браузере после
           первоначальной загрузки страницы. Ограничено первыми 10 постами
